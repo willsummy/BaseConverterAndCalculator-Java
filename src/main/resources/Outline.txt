@@ -1,0 +1,66 @@
+nouns
+
+user input object
+toDecimal converter
+fromDecimal converter
+basecalculator.Calculator
+
+
+----basecalculator.Calculator----
+
+
+if math, take in two numbers and operator
+
+abstract class that toDecimal and fromDecimal inherit from
+calculator inherits as well
+
+abstract convert method
+abstract calculate method
+
+contains main method
+
+----attributes----
+original base
+new base
+original number
+
+two numbers for math
+base for math
+operator
+
+boolean for math operation
+when false do conversion
+
+getters for attributes
+
+main is here
+
+----UI----
+method for printing menu and taking in input
+each method returns value from user to main class to be stored in static variables
+
+----toDecimal----
+uses getter to get original base, and original number
+
+convert base to decimal
+one method called in main that takes in info from UI and
+converts both integral and fractional in same method
+
+returns decimal conversion
+
+----fromDecimal----
+same as toDecimal
+takes in new base from UI
+takes in decimal number from toDecimal
+
+converts integer and fraction in same function
+
+
+----simpleCalculator----
+inerits from basecalculator.Calculator
+defines calculate method
+
+uses input from UI stored in parent class to do work
+
+convert all input to decimals, perform math asked, convert back to base
+

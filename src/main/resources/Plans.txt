@@ -1,0 +1,137 @@
+Convert any base number to any other base
+    Original base converter
+    add floating point converter as well
+
+    take in a number
+    parse into a string
+    check if valid
+    then check if floating point is included
+        if not floating point convert like normal
+        if floating point, split by point
+
+    floating point integral portion separately convert like normal
+        String getting concatenated on the left for binary notation
+        convert to decimal, then other base
+    fractional portion separately convert differently
+        String gets concatenated on the right side
+        still convert to decimal first, then to other base
+
+    add both strings together with point between
+
+
+Do arithmetic on any base number to any other base
+
+
+----------integral conversion---------
+base to decimal
+read right to left
+take number multiply by base to the power of position
+in integral portion, right most position is 0, goes up by one
+continually add vales
+
+final value is in decimal
+
+decimal to base
+create empty final string
+take whole number, divide by base, take remainder and concatenate to the left of final string
+divide quotient by base again, repeat until quotient is 0
+
+if remainder is 10+, use map to find correct letter symbol
+
+final string is anyBase notation
+
+
+-------fractional conversion-----------
+base to decimal
+again multiply number at current position by base to the power of position
+positions start at the left at -1, go right up by one
+add these results up normally, get final decimal point number
+
+
+decimal to base
+multiple WHOLE fractional number by base. Whatever the result has in integral portion
+(ex. 0.8 * 2 = 1.6, you'd use 1)
+the integral portion is the notation you'll use for first fractional position
+take fractional portion of result, multiply by  base again
+take integral, concatenate to the right of previous
+continue until result fractional portion is 0
+
+
+
+-------Examples-----------
+
+decimal - 13.625
+binary - 1101.101
+
+13/2 = 6r1
+6/2 = 3r0
+3/2 = 1r1
+1/2 = 0r1
+0
+make string from last to first
+integral binary portion is 1101
+
+0.625 * 2 = 1.25
+0.25 * 2 = 0.5
+0.5 * 2 = 1.0
+0
+make string form first to last
+fractional portion is 0.101
+
+add together for 1101.101
+
+binary to decimal
+
+1101
+right most first
+1 * 2^0 = 1
+0 * 2^1 = 0
+1 * 2^2 = 4
+1 * 2^4 = 8
+
+add results together for 13
+
+0.101
+from left to right
+1 * 2^-1 = 0.5
+0 * 2^-2 = 0
+1 * 2^-3 = 0.125
+add together for 0.625
+
+add both together for 13.625
+
+this applies to other bases as well, but for 10 and up, when getting remainders above 9 translate to
+letter notation
+when going base10+ to decimal, translate symbol to value before performing calculation, but logic is same
+
+
+these can all then be added together to simply utilize a map with associated values
+where 0-9 are associated with 0-9 but the 10-35 are associated with A-Z
+
+
+-------arithmetic with anyBase----------
+
+use above methods to convert inputs to decimal, perform operation
+and convert result to base
+
+
+
+---------GOALS--------------
+
+clean enough to be presentable, but also versatile enough to make later changes
+and add features like a web base application to host the calculator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+Lessons:
+
+-Integers and doubles both have inherent accuracy flaws.
+	This can be normally fixed with Big Decimal, but
+	can be more difficult with dynamically changing
+	accuracy requirements
+-Converting values into other bases can present unique challenges.
+	Some numbers that terminate naturally in decimal notation,
+	may have infinite repeating values in other notations.
+	Similar to 1/3 being 0.3333... repeating.
+-Some application can run in different paradigms and function equally
+	well in both. This particular application was also written in
+	Python with the same functionality, but same detriments.
